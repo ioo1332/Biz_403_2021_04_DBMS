@@ -61,3 +61,5 @@ DEFAULT TABLESPACE mydb;
 -- 심지어 접속(log in) 자체가 되지 않는다
 
 
+
+
