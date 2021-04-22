@@ -7,9 +7,102 @@ CREATE TABLE tbl_student(
     st_tel VARCHAR(20), -- 000-0000-0000
     st_addr NVARCHAR2(125) 
 );
+-- 생성한 TABLE에 데이터 추가
+-- DML (데이터 조작어)명령어를 사용하여 데이터 추가 
+-- create : 테이블에 존재하지 않는 데이터를 새로 추가한다라는 개념
+INSERT INTO tbl_student(st_num,st_name,st_dept,st_grade)
+VALUES ('00001','홍길동','국어국문','3');
+-- 데이터를 추가한후에는 잘 추가되었는지 확인
+-- tbl_student에 저장되어있는 모든 데이터를 무조건 보여달라
+SELECT*FROM tbl_student;
+
+INSERT INTO tbl_student(st_num,st_dept,st_grade)
+VALUES('00001','컴퓨터공학','2');
+SELECT*FROM tbl_student;
+
+-- 위에서 생성한 tbl_student 테이블에는 데이터를 추가하려고할때
+-- 이름 데이터가 없어도 데이터가 정상적으로 추가가 되어버린다
+-- 같은 학번의 데이터가 이미 추가 되어있어도 또다시 추가가 된다
+-- 이런식으로 데이터가 추가된다면 전체 데이터의 신뢰성에 문제가 된다
+-- DBMS에서는 table(entity)를 설계할때 이러한 오류를 방지하기 위하여 
+-- Table을 생성할때 제약조건을 설정하여 데이터가 INSERT되지 못하도록하는 기능이 있다
+-- 작성된 TABEL을 삭제 하고 다시 제약조건을 설정하여 생성하자
+DROP TABLE tbl_student;
+-- 제약조건 
+-- 1.학생의 이름은 데이터가 반드시 있어야 한다. st_name(학생이름) 칼럼은 NOT NULL이어야한다
+-- 2.학번은 절대 중복되면 안된다. tbl_student 테이블의 모든 데이터의 학번은 유일해야한다
+-- 중복되면 안되는 데이터는 UNIQUE, 필수 입력 데이터 NOT NULL
+CREATE TABLE tbl_student(
+    st_num CHAR(5) UNIQUE NOT NULL,
+    st_name NVARCHAR2(20) NOT NULL, 
+    st_dept NVARCHAR2(10),
+    st_grade VARCHAR(5), 
+    st_tel VARCHAR(20), 
+    st_addr NVARCHAR2(125) 
+);
+-- 오류 : 학생 이름 데이터가 없으므로 INSERT 불가
+INSERT INTO tbl_student(st_num,st_dept)
+VALUES ('00001','컴퓨터공학');
+
+-- 학생 이름 데이터를 포함하여 INSERT수행
+INSERT INTO tbl_student(st_num,st_dept,st_name)
+VALUES ('00001','컴퓨터공학','홍길동');
+
+-- 오류 : 학번칼럼이 없어서 INSERT불가
+INSERT INTO tbl_student(st_dept,st_name)
+VALUES ('사회과학','이몽룡');
+
+-- 오류 : st_num칼럼이 UNIQUE인데 이미 존재하는 00001학번으로 데이터를 추가하려해서.
+-- table을 만들때 제약조건을 설정할때 UNIQUE를 신중하게 선택해야한다
+INSERT INTO tbl_student(st_dept,st_name,st_num)
+VALUES ('사회과학','이몽룡','00001');
+
+INSERT INTO tbl_student(st_dept,st_name,st_num)
+VALUES ('사회과학','이몽룡','00100');
+
+INSERT INTO tbl_student(st_dept,st_name,st_num)
+VALUES ('법학','성춘향','00002');
+
+SELECT*FROM tbl_student;
+
+-- 기본키 칼럼 (PRIMARY KEY)
+-- 데이터를 조회(SELECT)할때 st_num 칼럼을 기준으로 조회를 하면
+-- 반드시 원하는 데이터 1개만 보여지는 조건을 만족하게 하는 칼럼
+-- 제약조건이 반드시 UNIQUE면서 NOT NULL해야 한다
+-- 기본키는 제약조건에 UNIQUE와 NOT NULL을 같이 설정해야하는데
+-- DBMS에서는 기본키 제약조건을 설정하는 키워드가 별도로 있다
 
 
+-- PRIMARY KEY : UNIQUE+NOT NULL+기타조건+INDEX 자동 생성
+-- 매우 강력한 가장 우선순위가 높은 제약조건
+DROP TABLE tbl_student;
+CREATE TABLE tbl_student(
+    st_num CHAR(5) PRIMARY KEY,
+    st_name NVARCHAR2(20) NOT NULL, 
+    st_dept NVARCHAR2(10),
+    st_grade VARCHAR(5), 
+    st_tel VARCHAR(20), 
+    st_addr NVARCHAR2(125) 
+);
+-- TABLE의 구조를 보여달라
+DESCRIBE tbl_student;
+DESC tbl_student;
+
+INSERT INTO tbl_student(st_dept,st_name,st_num)
+VALUES ('사회과학','이몽룡','00001');
+
+INSERT INTO tbl_student(st_dept,st_name,st_num)
+VALUES ('법학','성춘향','00100');
+
+INSERT INTO tbl_student(st_dept,st_name,st_num)
+VALUES ('컴퓨터공학','홍길동','00002');
+
+SELECT*FROM tbl_student;
+
+-- PK(PRIMARY KEY)로 설정된 칼럼에 조건을 걸어 데이터 조회하기
 SELECT
     *
-FROM tbl_student;
+FROM tbl_student
+WHERE st_num ='00001';
 
+SELECT*FROM tbl_student;
