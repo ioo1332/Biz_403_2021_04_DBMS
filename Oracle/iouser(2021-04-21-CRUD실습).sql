@@ -55,7 +55,7 @@ VALUES ('2021-01-01','홍길동',10,1000);
 -- io_pname 칼럼에 NULL을 insert 할수 없다
 -- io_pname 에 데이터가 setter 되지 않았다
 
-INSERT INTO tbl_iolist( io_pname ) VALUES('세우깡');
+INSERT INTO tbl_iolist( io_pname ) VALUES('새우깡');
 INSERT INTO tbl_iolist( io_pname ) VALUES(' ');
 
 -- 조건없이 모든 데이터를 조회하라(출력하라)
@@ -77,7 +77,7 @@ CREATE TABLE tbl_iolist (
     io_total NUMBER
 );
 INSERT INTO tbl_iolist(io_date,io_buyer,io_pname,io_qty,io_price)
-VALUES('2021-04-21','홍길동','세우깡',30,1000);
+VALUES('2021-04-21','홍길동','새우깡',30,1000);
 
 -- SELECT 명령문의  AS(Alias) 원래 table의 칼럼명을 변경하여
 -- 표현하고 싶을때
@@ -103,7 +103,7 @@ INSERT INTO tbl_iolist(io_date,io_buyer,io_pname,io_qty,io_price)
 VALUES('2021-04-21','임꺽정','빗자루',50,4000);
 
 INSERT INTO tbl_iolist(io_date,io_buyer,io_pname,io_qty,io_price)
-VALUES('2021-04-21','홍길동','매일우류',10,5000);
+VALUES('2021-04-21','홍길동','매일우유',10,5000);
 
 
 SELECT * FROM tbl_iolist;
