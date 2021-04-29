@@ -1,0 +1,12 @@
+--여기는 관리자
+CREATE TABLESPACE RentBookDB
+DATAFILE 'C:/oraclexe/data/rentbook.dbf'
+SIZE 1M AUTOEXTEND ON NEXT 1K;
+
+DROP USER bookuser CASCADE;
+CREATE USER bookuser IDENTIFIED BY bookuser
+DEFAULT TABLESPACE RentBookDB;
+
+GRANT DBA TO bookuser;
+
+REVOKE CREATE SESSION FROM bookuser;
