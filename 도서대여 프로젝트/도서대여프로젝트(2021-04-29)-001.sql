@@ -95,5 +95,9 @@ WHERE SUBSTR(출판일,0,4)='2018';
 SELECT SUBSTR(출판일,0,4) AS 출판년도 FROM "VIEW_도서정보";
 --출판일 칼럼의 데이터를 오른쪽으로 부터 4글자만 잘라서 보여라
 SELECT SUBSTR(출판일,-5) AS 출판월일 FROM "VIEW_도서정보"; 
- 
+--1 or 1=1
+--1인 결과가 있거나 1이거나
+--sql injection 
+DELETE FROM tbl_books 
+WHERE bk_isbn= 1 or 1 = 1; 
 
