@@ -4,6 +4,7 @@ DATAFILE 'C:/oraclexe/data/rentbook.dbf'
 SIZE 1M AUTOEXTEND ON NEXT 1K;
 
 DROP USER bookuser CASCADE;
+
 CREATE USER bookuser IDENTIFIED BY bookuser
 DEFAULT TABLESPACE RentBookDB;
 
