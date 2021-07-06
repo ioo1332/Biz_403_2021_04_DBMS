@@ -13,7 +13,7 @@ st_addr	nvarchar(125)
 create table tbl_score(
 sc_seq	bigint auto_increment primary key,
 sc_stnum	char(8)	NOT NULL	,
-sc_subject	nvarchar(20)	NOT NULL	,
+sc_subject	char(4)	NOT NULL	,
 sc_score	bigint	NOT NULL	
 );
 drop table tbl_score;

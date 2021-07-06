@@ -36,12 +36,29 @@ values('20210102',
 '컴공과',
 '2',
 '010-0000-0000');
-
+use db_school;
+drop table tbl_score;
+/* table에
+	insert into on duplicate key update를 실행하기 위해서는 pk 설정을 변경해야한다
+tbl_score 는 두개의 칼럼을 기준으로 delete, update를 수행하는 문제가 발생한다
+가장 좋은 설계는 update delete를 수행할때 한개의 칼럼으로 구성된 pk를 기준으로 수행하는 것이다
+*/
 create table tbl_score(
 sc_seq	bigint	auto_increment	primary key,
 sc_stnum	char(8)	NOT NULL	,
 sc_sbcode	char(4)	NOT NULL,	
-sc_score	int	NOT NULL	
+sc_score	int	NOT NULL	,
+primary key(sc_stnum,sc_sbcode)
+);
+/* pk는 그대로 살려두고 두개의 칼럼을 묶어 unique로 설정
+	두개 칼럼의 값이 동시에 같은 경우는 추가하지 말라는 제약조건 설정
+*/
+create table tbl_score(
+sc_seq	bigint	auto_increment	primary key,
+sc_stnum	char(8)	NOT NULL	,
+sc_sbcode	char(4)	NOT NULL,	
+sc_score	int	NOT NULL	,
+unique(sc_stnum,sc_sbcode)
 );
 
 drop table tbl_score;
