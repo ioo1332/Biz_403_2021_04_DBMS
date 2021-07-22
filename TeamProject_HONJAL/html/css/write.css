@@ -1,0 +1,53 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+form {
+  width: 55%;
+  margin: 50px auto;
+}
+fieldset {
+  width: 90%;
+  margin: 50px;
+  border: 1px solid;
+  border-radius: 15px;
+  color: white;
+}
+h2 {
+  padding-left: 3%;
+  font-size: 30px;
+  padding: 10px auto;
+}
+
+textarea {
+  resize: none;
+  width: 90%;
+  height: 280px;
+  margin: 20px;
+  border-radius: 5px;
+  outline: 0;
+  box-sizing: border-box;
+}
+.selectbox {
+  border-radius: 5px;
+  margin: 10px auto;
+}
+form div {
+  width: 80%;
+  margin: 5px auto;
+}
+
+form input {
+  width: 70%;
+  margin: 4px 5px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  outline: 0;
+}
+button {
+  width: 20%;
+  height: 50px;
+  margin: 20px 50px;
+  border-radius: 15px;
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.honjal.honjal.dao.ext.ContentDao">
+ 
+ 	<select id="findByIdContent" parameterType="Integer" resultType="ContentVO">
+		SELECT * FROM tbl_content
+		WHERE content_num = #{content_num}
+	</select>
+
+	<select id="allContent" resultType="ContentListDTO">
+		SELECT * FROM tbl_content
+		ORDER BY content_num DESC
+	</select>
+
+ 	<select id="menuContent" parameterType="String" resultType="ContentListDTO">
+		SELECT * FROM tbl_content
+		WHERE board_code LIKE CONCAT(#{board_code}, '%')
+		ORDER BY content_num DESC
+	</select>
+	
+	<select id="searchTitleContent" parameterType="String" resultType="ContentListDTO">
+		SELECT * FROM tbl_content
+		WHERE content_title LIKE CONCAT('%', #{search_word}, '%') AND board_code LIKE CONCAT(#{menu}, '%')
+		ORDER BY content_num DESC
+	</select>
+	
+ 	<insert id="insert" parameterType="ContentVO">
+ 		INSERT INTO tbl_content(member_num, member_nname, board_code, content_date, content_time, content_title, content_text, content_view, content_good)
+ 		VALUES(#{member_num}, #{member_nname}, #{board_code}, #{content_date}, #{content_time}, #{content_title}, #{content_text}, #{content_view}, #{content_good})
+ 	</insert>
+ 	
+ 	<update id="update" parameterType="ContentVO">
+ 		UPDATE tbl_content
+ 		SET content_title = #{content_title}, content_text = #{content_text}
+ 		WHERE content_num = #{content_num}
+ 	</update>
+ 	
+ 	<delete id="delete" parameterType="Integer">
+ 		DELETE FROM tbl_content WHERE content_num = #{content_num}
+ 	</delete>
+ 	
+ 	<!-- 조회수 -->
+ 	<update id="view_count" parameterType="int">
+        UPDATE tbl_content
+        SET content_view = content_view + 1
+        WHERE content_num=#{content_num}
+	</update>
+ 	
+ </mapper>

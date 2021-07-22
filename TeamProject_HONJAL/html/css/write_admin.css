@@ -1,0 +1,139 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf")
+      format("truetype");
+}
+* {
+  font-family: "NanumBarunGothic";
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+}
+form {
+  width: 58%;
+  margin: 50px auto;
+  max-width: 1050px;
+}
+
+fieldset {
+  width: 90%;
+  margin: 2% auto;
+  border: 1px solid white;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 1050px;
+}
+.board_title h2 {
+  margin-top: 70px;
+  padding-left: 3%;
+  font-size: 30px;
+  padding: 10px auto;
+}
+select {
+  padding: 8px;
+  outline: 0;
+  border-radius: 10px;
+}
+
+.admin_top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1050px;
+  margin-left: 12%;
+}
+
+option {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 100%;
+}
+.write_input {
+  border-radius: 10px;
+  border: 01 solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filebox {
+  text-align: left;
+  width: 10%;
+}
+.filebox label {
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  color: gray;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: 0.25em;
+}
+.filebox input[type="file"] {
+  /* 파일 필드 숨기기 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+textarea {
+  max-width: 1050px;
+  margin: 0 auto;
+  resize: none;
+  width: 99%;
+  height: 280px;
+  padding: 15px;
+  margin-left: 2%;
+  border-radius: 10px;
+  outline: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form div {
+  width: 80%;
+  margin: 5px auto;
+}
+
+form input {
+  width: 100%;
+  margin: 4px 15px;
+  padding: 8px 20px;
+  border-radius: 3px;
+  outline: 0;
+
+  text-align: left;
+}
+.btn_write {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn_write button {
+  padding: 10px 30px;
+  border-radius: 25px;
+  outline: 0;
+  border-color: rgb(184, 184, 184);
+  color: rgb(39, 38, 38);
+  border: 0;
+  margin: 0 20px;
+}

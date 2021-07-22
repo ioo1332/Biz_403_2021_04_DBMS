@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+/* 제목 - 구글웹폰트 */
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+/* 제목 - 여기어때잘난체 */
+@font-face {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* 메뉴 - 롯데마트드림체 */
+@font-face {
+  font-family: "LotteMartDream";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2")
+      format("woff2"),
+    url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff")
+      format("woff");
+}
+
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.menu_list {
+  color: black;
+}
+
+header {
+  /* position: fixed; 상단에 고정 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+header:hover {
+  cursor: pointer;
+}
+
+#navi {
+  width: 100%;
+  height: 200px;
+  max-width: 1050px;
+  margin: auto;
+}
+
+#logo {
+  position: absolute; /* 겹쳐질 수 있게 부모엔 relative 자식엔 absolute */
+  width: 1050px;
+  margin: auto;
+  text-align: center;
+  margin-top: 7px;
+  /* background-color: transparent; 앱솔루트라 배경색 같이 돼버려서 배경색 투명하게 */
+}
+
+#logo img {
+  width: 120px;
+  margin-right: 280px;
+}
+
+/* h2 아래에 밑줄 긋기 */
+/* #title h2:after {
+  content: "";
+  display: block;
+  width: 120px;
+  border-bottom: 2px solid #99c4c8;
+  margin: 7px auto;
+} */
+
+#menu {
+  display: flex;
+  width: 80%;
+  max-width: 1050px;
+  margin: auto;
+  list-style: none;
+}
+
+.menu_list {
+  font-family: "LotteMartDream";
+  width: calc(100% / 7);
+  line-height: 40px;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.menu_list a {
+  color: rgb(71, 71, 71);
+}
+
+#menu li:hover {
+  background-color: #fff;
+}
+
+.menu_list:hover {
+  color: #d6b26e;
+}

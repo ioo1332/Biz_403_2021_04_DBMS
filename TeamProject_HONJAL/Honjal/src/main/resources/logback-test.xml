@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="3 seconds">
+<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>[%-5level] - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework" level="INFO"  additivity="false"/>
+    <logger name="org.mybatis"><level value="INFO" additivity="false"/></logger>
+
+    <!-- 적용하는 프로젝트의  Base Package를 설정 -->
+    <logger name="com.callor.project"><level value="INFO"  additivity="false"/></logger>
+
+
+	<!-- 적용하는 프로젝트의  controller와 service  Package의 level을 debug로 설정 -->
+	<logger name="com.honjal.honjal"><level value="DEBUG"  additivity="false"/></logger>
+    <logger name="com.honjal.honjal.controller"><level value="DEBUG"  additivity="false"/></logger>
+    <logger name="com.honjal.honjal.searvice"><level value="DEBUG"  additivity="false"/></logger>
+    
+    <!-- SQL Logger -->
+	<logger name="jdbc.sqltiming" additivity="false">
+		<level value="warn" />
+		<appender-ref ref="STDOUT"/> 
+	</logger>
+
+	<logger name="jdbc.sqlonly" additivity="false"> 
+		<level value="info"/> 
+		<appender-ref ref="STDOUT"/> 
+	</logger>
+
+	<logger name="jdbc.audit" additivity="false"> 
+		<level value="warn"/>  
+		<appender-ref ref="STDOUT"/> 
+	</logger> 
+
+	<logger name="jdbc.resultset" additivity="false">
+		<level value="warn" />
+		<appender-ref ref="STDOUT"/> 
+	</logger>
+
+	<logger name="jdbc.resultsettable" additivity="false"> 
+		<level value="info"/>  
+		<appender-ref ref="STDOUT"/> 
+	</logger> 
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

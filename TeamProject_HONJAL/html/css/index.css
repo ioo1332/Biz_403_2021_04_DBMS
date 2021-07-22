@@ -1,0 +1,283 @@
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf")
+      format("truetype");
+}
+
+* {
+  font-family: "NanumBarunGothic";
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  color: black;
+}
+
+#main_top {
+  display: flex;
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+  margin-top: 70px;
+  /* 가운데 정렬 해줘야 해서 margin:auto 쓰고 헤더높이만큼 아래로 와야 되기 때문에 margin-top을 그 아래에 써줌 */
+}
+
+/* top ( user ) ------------------------------------------------------------ */
+
+#main_user {
+  border: 1px solid gray;
+  width: 300px;
+  height: 225px;
+  padding: 40px;
+  text-align: center;
+  margin: auto;
+}
+
+#main_user input {
+  display: block;
+  width: 200px;
+  margin: auto;
+  outline: 0;
+  border-radius: 50px;
+  border: 2px solid #b3d83c;
+  font-size: 13px;
+  line-height: 2.5;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  transition: 0.5s;
+}
+
+#login input:focus {
+  width: 100%;
+}
+
+#main_user button {
+  width: 80px;
+  height: 30px;
+  margin: auto;
+  margin-top: 10px;
+  border: 0;
+  background-color: white;
+  border: 2px solid #b3d83c;
+  border-radius: 25px;
+  color: rgb(39, 38, 38);
+}
+
+#main_user button:hover {
+  cursor: pointer;
+}
+
+/* top ( slide ) ------------------------------------------------------------ */
+
+#main_slide {
+  width: 730px;
+  margin-left: 20px;
+  margin-right: 0px;
+  position: relative;
+}
+
+#slide_img_box {
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 5s;
+}
+
+#main_slide img {
+  width: 100%;
+  display: none;
+  cursor: pointer;
+  transition: transform 0.5s linear;
+}
+
+#main_slide img:hover {
+  transform: scale(1.1); /*  default */
+  -webkit-transform: scale(1.1); /*  크롬 */
+  -moz-transform: scale(1.1); /* FireFox */
+  -o-transform: scale(1.1); /* Opera */
+}
+
+#main_slide img:first-child {
+  display: block;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.left {
+  left: 20px;
+}
+
+.right {
+  right: 7px;
+}
+
+#circleBox {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 5px;
+}
+
+.circle:first-child {
+  background-color: #d6b26e;
+}
+
+/* middle ( best , data )  ------------------------------------------------------------ */
+
+#main_middle {
+  padding-top: 50px;
+  display: flex;
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+#main_best,
+#main_data {
+  width: 50%;
+}
+
+#main_best {
+  padding-right: 20px;
+}
+#main_data {
+  padding-left: 20px;
+}
+
+#main_best h2,
+#main_data h2,
+#main_bottom h2 {
+  font-size: 18px;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+#main_best h2,
+#main_data h2 {
+  border-bottom: 1px solid gray;
+  padding-bottom: 7px;
+  margin-bottom: 10px;
+}
+
+#main_best div,
+#main_data div {
+  display: flex;
+}
+
+#main_best img,
+#main_data img {
+  width: 200px;
+  height: 180px;
+  padding-top: 10px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+#main_best ol,
+#main_data ul {
+  width: 60%;
+}
+
+#main_best div ol li.list_best,
+#main_data div ul li.list_data {
+  line-height: 2.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#main_best div ol li.list_best:hover,
+#main_data div ul li.list_data:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.list_best span {
+  font-weight: bold;
+}
+
+#main_data div ul {
+  list-style: disc;
+}
+
+/* bottom ------------------------------------------------------------ */
+
+#main_bottom {
+  padding-top: 50px;
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+}
+
+#main_bottom h2 {
+  margin-bottom: 20px;
+}
+
+.board {
+  table-layout: fixed;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.board tr th {
+  border-top: 2px solid gray;
+  padding: 10px;
+  font-weight: bold;
+  background-color: #f5f3f3;
+  border-bottom: 1px solid lightgray;
+}
+
+.board tr td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 12px;
+  border-bottom: 0.5px solid #eae9e9;
+}
+
+.board span {
+  color: rgb(218, 4, 4);
+}
+
+/* 글제목은 왼쪽 정렬하고 마우스 커서 모양 바뀜 */
+.board tr td:nth-of-type(3) {
+  text-align: left;
+  cursor: pointer;
+}
+
+/* copyright ------------------------------------------------------------ */
+
+footer {
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
+  border-top: 3px solid #d6b26e;
+  line-height: 5;
+}

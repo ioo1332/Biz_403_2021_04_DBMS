@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+header {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header img {
+	width: 1050px;
+  cursor: pointer;
+}
+
+/* h2 아래에 밑줄 긋기 */
+/* #title h2:after {
+  content: "";
+  display: block;
+  width: 120px;
+  border-bottom: 2px solid #99c4c8;
+  margin: 7px auto;
+} */
+
+#menu_box {
+  display: flex;
+  width: 1050px;
+  margin: auto;
+  list-style: none;
+}
+
+.menu_list {
+  font-family: "LotteMartDream";
+  width: calc(100% / 7);
+  line-height: 40px;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+}
+.menu_list:hover {
+  color: #d6b26e;
+}

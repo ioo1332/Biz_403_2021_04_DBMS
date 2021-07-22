@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav id="navi">
+        <img src="static/images/logo_v5.jpg" />
+        <ul id="menu_box">
+          <li class="menu_list">공지사항</li>
+          <li class="menu_list">정보게시판</li>
+          <li class="menu_list">생활 TIP</li>
+          <li class="menu_list">랜선집들이</li>
+          <li class="menu_list">혼잘TALK</li>
+          <li class="menu_list">리뷰게시판</li>
+          <li class="menu_list">자취 Q&A</li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="main_sec">
+      <c:choose>
+        <c:when test="${BODY == 'NOTICE_MAIN' }">
+          <%@ include file="/WEB-INF/views/notice/main.jsp"%>
+        </c:when>
+        <c:when test="${BODY == 'INFO_MAIN' }">
+          <%@ include file="/WEB-INF/views/info/main.jsp"%>
+        </c:when>
+        <c:when test="${BODY == 'TIP_MAIN' }">
+          <%@ include file="/WEB-INF/views/tip/main.jsp"%>
+        </c:when>
+        <c:when test="${BODY == 'INTERIOR_MAIN' }">
+          <%@ include file="/WEB-INF/views/interior/main.jsp"%>
+        </c:when>
+        <c:when test="${BODY == 'TALK_MAIN' }">
+          <%@ include file="/WEB-INF/views/talk/main.jsp"%>
+        </c:when>
+        <c:when test="${BODY == 'REVIEW_MAIN' }">
+          <%@ include file="/WEB-INF/views/review/main.jsp"%>
+        </c:when>
+        <c:when test="${BODY == 'QNA_MAIN' }">
+          <%@ include file="/WEB-INF/views/qna/main.jsp"%>
+        </c:when>
+        <c:otherwise>
+          <%@ include file="/WEB-INF/views/main.jsp"%>
+        </c:otherwise>
+      </c:choose>
+    </section>
+
+    <footer>
+      <address>
+        &copy; 2021. honjal All pictures cannot be copied without permission.
+      </address>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+
+.write_form fieldset {
+	margin: auto;
+	margin-top: 30px;
+	width: 80%;
+	border: 0;
+	text-align: center;
+}
+
+.write_top {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.write_form select {
+  padding: 8px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.write_form option {
+  border: 1px solid black;
+  padding: 8px;
+  font-size: 100%;
+}
+
+.write_title {
+	width: 600px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+  padding: 8px 15px;
+  text-align: left;
+}
+
+.write_title:focus {
+	border-color: black;
+}
+
+.file_box {
+  width: 20px;
+}
+
+.file_box label {
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  font-size: inherit;
+  border: 1px solid #ebebeb;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+.file_box input[type="file"] {
+  /* 파일 필드 숨기기 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.write_text {
+	width: 100%;
+  height: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  border-color: gray;
+  font-size: 15px;
+}
+
+.write_text:focus {
+	border-color: black;
+}
+
+.write_bottom {
+	margin-top: 20px;
+	width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: auto;
+}
+
+.write_bottom button {
+	width: 70px;
+	height: 40px;
+	margin: 0 10px;
+	border-color: gray;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.write_bottom button:hover {
+	border-color: #b3d83c;
+}
+

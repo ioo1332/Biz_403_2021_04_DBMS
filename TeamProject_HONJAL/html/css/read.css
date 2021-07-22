@@ -1,0 +1,216 @@
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf")
+      format("truetype");
+}
+
+.ground {
+  font-family: "NanumBarunGothic";
+  max-width: 1050px;
+  margin: auto;
+  margin-top: 70px;
+  background-color: #faf5ef;
+}
+
+.btn_ud {
+  width: 100%;
+  text-align: right;
+}
+
+.ground > .btn_ud {
+  padding: 70px 130px 10px 0;
+}
+
+.update,
+.delete {
+  border: 1px solid lightgray;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.btn_ud > .update,
+.btn_ud > .delete {
+  margin-left: 10px;
+}
+
+.writing,
+.comment {
+  width: 100%;
+  padding: 0 130px 70px 130px;
+}
+
+.writing_title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.writing_good {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  /* 같은 라인에 맞추기 */
+  background-color: #e3ecc8;
+  width: 10%;
+  justify-content: center;
+}
+
+.writing_good p {
+  font-size: 16px;
+}
+
+.writing_good img,
+.writing_user img {
+  width: 30px;
+  height: 30px;
+}
+
+.writing_date {
+  font-size: 17px;
+  padding-bottom: 20px;
+}
+
+.writing_user {
+  display: flex;
+  justify-content: flex-end;
+  /* 오른쪽 정렬 */
+  align-items: center;
+  font-size: 20px;
+}
+
+.writing hr {
+  border: 0.1px solid rgb(223, 223, 223);
+  margin: 30px 0 50px 0;
+}
+
+.writing_user_img {
+  margin-left: 20px;
+}
+
+.writing_content {
+  font-size: 17px;
+  margin-top: 30px;
+  line-height: 30px;
+}
+
+.writing_content img {
+  width: 80%;
+  margin-top: 20px;
+}
+
+.like {
+  width: 100%;
+  margin: auto;
+}
+
+.writing_bottom {
+  display: flex;
+  width: 100%;
+  margin: 30px auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.box_like {
+  width: 70px;
+  background-color: #e3ecc8;
+  border-radius: 50px;
+  margin: auto;
+}
+
+.writing_bottom button {
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+  outline: 0;
+  border: 2px solid #b3d83c;
+  background-color: white;
+  cursor: pointer;
+}
+
+.like:hover {
+  cursor: pointer;
+}
+
+/* comment ------------------------------------------------------------ */
+
+.comment > p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#tb_comment_list,
+#tb_comment {
+  width: 100%;
+  margin: auto;
+  align-items: center;
+}
+
+#tb_comment_list .cm_img,
+#tb_comment .cm_img {
+  vertical-align: middle;
+}
+
+#tb_comment_list span {
+  color: gray;
+}
+
+#tb_comment_list img,
+#tb_comment img {
+  width: 30px;
+  height: 30px;
+}
+
+td.cm_name,
+td.cm_cm,
+td textarea {
+  padding: 20px;
+  vertical-align: middle;
+}
+
+.cm_btn {
+  vertical-align: middle;
+  text-align: center;
+}
+
+#tb_comment_list tr {
+  border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+textarea {
+  width: 90%;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 15px;
+  resize: none;
+}
+
+#tb_comment .insert {
+  width: 80%;
+  height: 50px;
+
+  border-radius: 15px;
+  outline: 0;
+  border: 2px solid #b3d83c;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* copyright ------------------------------------------------------------ */
+
+footer {
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
+  border-top: 3px solid #d6b26e;
+  line-height: 5;
+}
