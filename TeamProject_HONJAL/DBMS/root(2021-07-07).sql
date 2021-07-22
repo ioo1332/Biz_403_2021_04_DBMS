@@ -1,3 +1,0 @@
-CREATE DATABASE honjalDB;
-
--- CREATE USER 'honjalUSER'@'192.168.
